@@ -14,6 +14,11 @@ def _initappimage():
         command = os.path.abspath(command)
         sys.executable = command
         sys._base_executable = command
+    
+    # unset AppImage variables to ensure transparent environment
+    env.pop("APPIMAGE_COMMAND", None)
+    env.pop("APPIMAGE", None)
+    env.pop("APPDIR", None)
 
 _initappimage()
 del _initappimage
