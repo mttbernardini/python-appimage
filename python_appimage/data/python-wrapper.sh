@@ -16,4 +16,4 @@ export APPIMAGE_COMMAND=$(command -v -- "$ARGV0")
 {{ cert-file }}
 
 # Call Python
-{{ entrypoint }}
+exec {{ entrypoint }}
