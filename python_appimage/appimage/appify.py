@@ -81,7 +81,7 @@ class Appifier:
             )
             dictionary = {
                 'entrypoint': entrypoint,
-                'shebang': '#! /bin/bash',
+                'shebang': '#! /bin/sh',
                 'tcltk-env': tcltk_env_string(self.python_pkg, self.tk_version)
             }
             if cert_file:

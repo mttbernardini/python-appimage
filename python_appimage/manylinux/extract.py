@@ -412,7 +412,7 @@ class ImageExtractor:
                  f'tar -xzf {filename} --exclude=dev -C {destination} && ',
                  f'echo \'{layer}\' >> {extracted_file}'
             ))
-            r = subprocess.run(f'/bin/bash -c "{cmd}"', shell=True,
+            r = subprocess.run(f'/bin/sh -c "{cmd}"', shell=True,
                                capture_output=True)
             if r.returncode != 0:
                 raise ValueError(r.stderr.decode())

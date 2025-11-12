@@ -42,7 +42,7 @@ class Patcher:
                  f'mkdir -p {destination} && ',
                  f'tar -xzf {path} -C {destination}',
             ))
-            r = subprocess.run(f'/bin/bash -c "{cmd}"', shell=True,
+            r = subprocess.run(f'/bin/sh -c "{cmd}"', shell=True,
                                capture_output=True)
             if r.returncode != 0:
                 raise ValueError(r.stderr.decode())

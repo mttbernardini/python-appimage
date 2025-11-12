@@ -309,7 +309,7 @@ def execute(appdir, name=None, python_version=None, linux_tag=None,
             with open(entrypoint_path) as f:
                 shebang = f.readline().strip()
             if not shebang.startswith('#!'):
-                shebang = '#! /bin/bash'
+                shebang = '#! /bin/sh'
 
             entrypoint = load_template(entrypoint_path, **dictionary)
             dictionary = {'entrypoint': entrypoint,
